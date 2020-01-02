@@ -1,0 +1,26 @@
+<section>
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Create a post
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div>
+                <mat-progress-bar mode = "determinate" value="40"></mat-progress-bar>
+            </div>
+
+            <mat-form-field>
+                <input matInput placeholder="Post title" [(ngModel)] = "title">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <textarea matInput placeholder="Post content" [(ngModel)] = "content" rows = "10"></textarea>
+            </mat-form-field>
+            <br>
+            <button mat-raised-button (click)="createPost()" [disabled] = "!title || !content">{{btnText}}</button>
+        </mat-expansion-panel>
+    </mat-accordion>
+</section>
+
